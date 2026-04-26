@@ -228,14 +228,21 @@ class Link:
 
         ###Workspace Start###
         # vector from predessor to this link
-        # self.r_pi__p = ...
+        self.r_pi__p = np.array([self.a_p, 
+                                -self.d_i * np.sin(self.alpha_p),
+                                self.d_i * np.cos(self.alpha_p)])
         # base transformation from predecessor to this link
-        # self.A_ip = ...
+        self.A_ip = np.array([
+            [np.cos(q), -np.sin(q), 0],
+            [np.sin(q) * np.cos(self.alpha_p), np.cos(q) * np.cos(self.alpha_p), -np.sin(self.alpha_p)],
+            [np.sin(q) * np.sin(self.alpha_p), np.cos(q) * np.sin(self.alpha_p),  np.cos(self.alpha_p)]
+        ]).T
+        
         ## absolute position and orientation
         # base transformation from cosy 0 to this link
-        # self.A_i0 = ...
+        self.A_i0 = self.A_ip @ prev.A_i0 
         # position of this link
-        # self.r_i__0 = ...
+        self.r_i__0 = prev.r_i__0 + prev.A_i0.T @ self.r_pi__p
         ###Workspace End###
 
     def calculate_velocities(self, prev: Link, dot_q: float)-> None:
@@ -496,7 +503,7 @@ class Robot:
 
 
         ###Workspace Start###
-        #self.r_TCP__0 = ...
+        self.r_TCP__0 = self.links[-1].r_i__0 + self.links[-1].A_i0 @ self.r_NTCP__N
         ###Workspace End###
 
         self.q = np.copy(q)

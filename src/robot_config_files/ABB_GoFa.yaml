@@ -25,6 +25,25 @@ links:
    d_i: 0 # in meter
 ###Workspace End###
 
+  # - alpha_p: 0 deg
+  #   a_p: 0.0 # in meter
+  #   d_i: 0.265 # in meter
+  # - alpha_p: -90 deg
+  #   a_p: 0.0 # in meter
+  #   d_i: 0.0 # in meter
+  # - alpha_p: 0 deg
+  #   a_p: 0.444 # in meter
+  #   d_i: 0.0 # in meter
+  # - alpha_p: 90 deg
+  #   a_p: 0.110 # in meter
+  #   d_i: 0.470 # in meter
+  # - alpha_p: 90 deg
+  #   a_p: -0.080 # in meter
+  #   d_i: 0.0 # in meter
+  # - alpha_p: -90 deg
+  #   a_p: 0.0 # in meter
+  #   d_i: 0.101 # in met
+
 
 ###Workspace Start###
 # position of the TCP represented in the coordinate system of the last link in meter
@@ -40,3 +59,4 @@ q_min: [-180.0 deg, -180.0 deg, -225.0 deg, -180.0 deg, -180.0 deg, -270.0 deg]
 
 # comfort pose in joint space
 q_comfort: [0.0, -90.0 deg, 0.0, 0.0, 30.0 deg, 0.0]
+
