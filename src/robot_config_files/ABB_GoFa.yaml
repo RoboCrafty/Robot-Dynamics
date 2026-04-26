@@ -8,16 +8,16 @@ links:
  - alpha_p: 0 deg
    a_p: 0 # in meter
    d_i: 0 # in meter
- - alpha_p: 90 deg
+ - alpha_p: -90 deg
    a_p: 0 # in meter
    d_i: 0 # in meter
  - alpha_p: 0 deg
    a_p: 0.444 # in meter
    d_i: 0 # in meter
- - alpha_p: 90 deg
+ - alpha_p: -90 deg
    a_p: 0.110 # in meter
    d_i: 0.470 # in meter
- - alpha_p: -90 deg
+ - alpha_p: 90 deg
    a_p: 0 # in meter
    d_i: 0 # in meter
  - alpha_p: 90 deg
